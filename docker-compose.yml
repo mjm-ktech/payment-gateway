@@ -8,9 +8,9 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-Admin@123}
       - POSTGRES_DB=${POSTGRES_DB:-payment_gateway_database}
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/payment_gateway/data
     ports:
-      - "5434:5432"
+      - "5435:5432"
     restart: always
 volumes:
   postgres_data:
