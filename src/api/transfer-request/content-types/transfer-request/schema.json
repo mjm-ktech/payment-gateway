@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transfer_requests",
+  "info": {
+    "singularName": "transfer-request",
+    "pluralName": "transfer-requests",
+    "displayName": "Transfer request",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "amount": {
+      "type": "biginteger",
+      "required": true
+    },
+    "pay_status": {
+      "type": "boolean",
+      "default": false
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "uuid-format": "^[A-Z]{4}[0-9]{6}$"
+      },
+      "customField": "plugin::strapi-advanced-uuid.uuid"
+    },
+    "website": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::website.website"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Momo",
+        "VietinBank",
+        "MBBank",
+        "Sacombank"
+      ]
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

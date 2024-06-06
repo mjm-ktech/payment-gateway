@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "websites",
+  "info": {
+    "singularName": "website",
+    "pluralName": "websites",
+    "displayName": "Website",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "url": {
+      "type": "string"
+    },
+    "bank_accounts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bank-account.bank-account"
+    },
+    "amount": {
+      "type": "biginteger",
+      "default": "0"
+    },
+    "momo_account": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::momo-account.momo-account"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "momo_accounts",
+  "info": {
+    "singularName": "momo-account",
+    "pluralName": "momo-accounts",
+    "displayName": "Momo account"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "account_number": {
+      "type": "string"
+    },
+    "transfer_email": {
+      "type": "string"
+    },
+    "transfer_password": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

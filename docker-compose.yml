@@ -1,0 +1,21 @@
+version: "3.1"
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_payment_gateway
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-payment_gateway}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-Admin@123}
+      - POSTGRES_DB=${POSTGRES_DB:-payment_gateway_database}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+    restart: always
+volumes:
+  postgres_data:
+
+networks:
+  strapi:
+    name: Strapi
+    driver: bridge

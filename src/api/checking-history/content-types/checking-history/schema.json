@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "checking_histories",
+  "info": {
+    "singularName": "checking-history",
+    "pluralName": "checking-histories",
+    "displayName": "Checking history"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "request": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::transfer-request.transfer-request"
+    },
+    "execution_time": {
+      "type": "integer"
+    },
+    "result": {
+      "type": "string"
+    }
+  }
+}
