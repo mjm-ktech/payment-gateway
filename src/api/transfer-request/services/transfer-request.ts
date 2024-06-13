@@ -63,7 +63,7 @@ export default factories.createCoreService(
             acqId: bankAccount.bank.bank_no,
             addInfo: transferRequest.content,
             amount: transferRequest.amount,
-            template: "compact",
+            template: "print",
           }), // Data is converted to a JSON string
         });
         if (response.ok) {
